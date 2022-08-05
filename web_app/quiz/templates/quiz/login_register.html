@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>O que é a LGPD? - Acesso/Cadastro</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'quiz/css/style_login.css' %}">
+</head>
+<body>
+
+    
+    <div class="container">
+        <!-- Login -->
+        <form class="form" id="login">
+            <h1 class="form__title">Acesso</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="E-mail">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Senha">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Entrar</button>
+            <p class="form__text">
+                <a href="#" class="form__link">Esqueceu a senha?</a>
+            </p>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkCreateAccount">Não tem uma conta? Crie uma</a>
+            </p>
+        </form>
+        <!-- Register Form -->
+        <form class="form form--hidden" id="createAccount">
+            <h1 class="form__title">Crie uma conta</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Nome da empresa">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="E-mail">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Senha">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Confirmar senha">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Cadastrar</button>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkLogin">Já possui uma conta? Acesse</a>
+            </p>
+        </form>
+    </div>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>
