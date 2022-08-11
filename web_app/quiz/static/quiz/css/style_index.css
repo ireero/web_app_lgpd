@@ -74,7 +74,7 @@ header .line{
     padding: 90px;
 }
 .banner_img{
-    background-image: url(../images/register.svg);
+    background-image: url(../images/login.svg);
     background-position:center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -101,6 +101,7 @@ header .line{
     line-height: 25px;
 }
 .area1_img1{
+    margin-left: 20px;
     background-color: #FFFFFF;
     height: 720px;
     background-image: url(../images/security.svg);
@@ -125,8 +126,9 @@ header .line{
     line-height: 25px;
 }
 .area2_img1{
-    height: 720px;
-    background-image: url(../images/login.svg);
+    margin-bottom: 20px;
+    height:560px;
+    background-image: url(../images/register.svg);
     background-size:contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,6 +145,13 @@ footer{
 }
 
 
+#div_fixed{
+    position: fixed;
+    bottom: 20px;
+    
+}
+
+
 
 @media (min-width: 769px) and (max-width: 1140px){
     .container{
@@ -154,8 +163,19 @@ footer{
     .container{
         padding-left: 20px;
         padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    .banner_img{
+    .header_logo{
+        padding-top: 20px;
+    }
+    .banner{
+        grid-template-columns: 1fr;
+    }
+    .banner_img, .area1_img1, .area2_img1{
+        display: none;
         background: none;
     }
     .area1{
@@ -168,6 +188,12 @@ footer{
 
 
 @media (max-width: 426px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .banner{
         display: grid;
         grid-template-columns: 1fr;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'quiz/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'quiz/css/style_index.css' %}">
     <title>Solus IT - LGPD Quiz</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <div class="line"></div>
         <div class="container header_area">
             <div class="header_logo">
-                <a href="http://solus-it.com.br/" target="_blank">
+                <a href="login/" target="_blank">
                     <img src="{% static 'quiz/images/Logo_Solus_2.png' %}" alt="">
                 </a>
             </div>
@@ -23,14 +23,14 @@
     <section class="banner">
         <div class="container">
             <h1>
-                SOLUS IT<br/>
-                Consultoria LGPD
+                Acesse o Quiz<br/>
+                Sobre a LGPD
             </h1>
             <span>
-                Esteja em conformidade com a LGPD e adiquira maior controle e eficiência dos seus processos.
+                O sistema de autoavaliação de empresas pode permitir que elas próprias verifiquem o seu nível de adequação à Lei Geral de Proteção de Dados Pessoais.
             </span>
             <br>
-            <a href="" class="button">Entre em contato</a>
+            <a href="" class="button">Acesse Aqui</a>
         </div>
         <div class="banner_img"></div>
     </section>
@@ -56,13 +56,11 @@
         <div class="area2_content">
             <div class="bar"></div>
             <h2>
-                Quiz sobre a LGPD
+                Consultoria LGPD Solus IT
             </h2>
             <div class="area2_text">
-                O sistema de autoavaliação de empresas pode permitir que e as empresas verifiquem o seu nível de adequação à Lei Geral de Proteção de Dados Pessoais. O Sistema foi construído  de forma que avalie, de maneira qualitativa, uma empresa por meio de um questionário.
+                Esteja em conformidade com a LGPD e adquira maior controle e eficiência dos seus processos além de evitar multas que possam atrapalhar o desenvolvimento do seu negócio.
             </div>
-            
-            <a href="login/" class="button">Acesse aqui</a>
         </div>
         <div class="area2_img1"></div>
     </section>
@@ -70,5 +68,14 @@
     <footer>
         Criado por Celso Brito e Renato Rodrigues
     </footer>
+
+    <div id="div_fixed" class="float" data-shrink="contact">
+        <a href="#">
+            <div class="flex-items">
+                <img src="{% static 'quiz/images/safe.png' %}" alt="Entre em contato para estar em conformidade">
+                <span>Esteja em conformidade</span>
+            </div>
+        </a>
+    </div>
 </body>
 </html>

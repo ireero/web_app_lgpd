@@ -1,23 +1,3 @@
-//Status de Sucesso ou Erro
-
-function setFormMessage(formElement, type, message) {
-    const messageElement = formElement.querySelector(".form__message");
-
-    messageElement.textContent = message;
-    messageElement.classList.remove("form__message--success", "form__message--error");
-    messageElement.classList.add(`form__message--${type}`);
-}
-
-function setInputError(inputElement, message) {
-    inputElement.classList.add("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
-}
-
-function clearInputError(inputElement) {
-    inputElement.classList.remove("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
-}
-
 // Troca no DOM para, login e cadastro
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -36,21 +16,4 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("form--hidden");
     });
 
-//Tratamento de Error
-    loginForm.addEventListener("submit", e => {
-        e.preventDefault();
-        setFormMessage(loginForm, "error", "E-mail/senha inválido");
-    });
-
-    document.querySelectorAll(".form__input").forEach(inputElement => {
-        inputElement.addEventListener("blur", e => {
-            if (e.target.id === "signupUsername" && e.target.value.length > 1) {
-                setInputError(inputElement, "Nome da empresa deve ter mais de uma letra");
-            }
-        });
-
-        inputElement.addEventListener("input", e => {
-            clearInputError(inputElement);
-        });
-    });
 });
