@@ -10,6 +10,7 @@ class Usuario(models.Model):
 
     nome = models.CharField(max_length=100)
     senha = models.CharField(max_length=30)
+    email = models.CharField(max_length=100)
     data = models.DateTimeField('date published')
     pontuacao_parcial = models.IntegerField(default=0)
     estrelas = models.IntegerField(default=0)
