@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from . import models
 from .login import Login
 from .erro import Erro
+from .cadastro import Cadastro
 
 
 def index(request):
@@ -9,7 +9,6 @@ def index(request):
 
 
 def login(request):
-
     context = {}
     error = Erro()
 
@@ -33,9 +32,9 @@ def login(request):
 
 
 def cadastro(request):
-
     context = {}
     error = Erro()
+    cad = Cadastro()
 
     if request.method == 'POST':
 
@@ -44,4 +43,7 @@ def cadastro(request):
         senha_cad = request.POST.get('senha_cad', None)
         confirm_senha_cad = request.POST.get('confirm_senha_cad', None)
 
-        error.verificar_campos_vazios_login(nome_empresa_cad, email_cad, senha_cad, confirm_senha_cad)
+        if error.verificar_campos_vazios_cadastro(nome_empresa_cad, email_cad, senha_cad, confirm_senha_cad) == 1:
+            cad.realizar_cadastro(nome_empresa_cad, email_cad, senha_cad, confirm_senha_cad)
+
+    return render(request, 'quiz/cadastro.html', context)
