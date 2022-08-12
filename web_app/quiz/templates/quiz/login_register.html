@@ -37,23 +37,23 @@
             </p>
         </form>
         <!-- Register Form -->
-        <form class="form form--hidden" id="createAccount">
+        <form class="form form--hidden" id="createAccount" action="{% url 'cadastro' %}" method="POST">
             <h1 class="form__title">Crie uma conta</h1>
             <div class="form__message form__message--error"></div>
             <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Nome da empresa">
+                <input type="text" id="signupUsername" class="form__input" id="nome_empresa_cad" name="nome_empresa_cad" autofocus placeholder="Nome da empresa">
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="E-mail">
+                <input type="text" class="form__input" id="email_cad" name="email_cad" autofocus placeholder="E-mail">
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Senha">
+                <input type="password" class="form__input" id="senha_cad" name="senha_cad" autofocus placeholder="Senha">
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Confirmar senha">
+                <input type="password" class="form__input" id="confirm_senha_cad" name="confirm_senha_cad" autofocus placeholder="Confirmar senha">
                 <div class="form__input-error-message"></div>
             </div>
             <button class="form__button" type="submit">Cadastrar</button>
@@ -62,5 +62,6 @@
             </p>
         </form>
     </div>
+    <script type="javascript" src="{% static 'quiz/js/login.js' %}"> </script>
 </body>
 </html>
