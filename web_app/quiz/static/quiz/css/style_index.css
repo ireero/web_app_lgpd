@@ -148,10 +148,52 @@ footer{
 #div_fixed{
     position: fixed;
     bottom: 20px;
-    
+    margin: 0 20px;
+    background-color: #00BFFF;
+    width: 270px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+#div_fixed.shrink{
+    width: 50px;
+}
+#div_fixed img{
+    width: 50px;
+    height: 50px;
+}
+#div_fixed a{
+    text-decoration: none;
+    color: #000000;
+}
+#div_fixed a .flex-items{
+    display: flex;
+    align-items: center;
+}
+#div_fixed a .flex-items span{
+    display: block;
+    font-weight: bold;
+    color: #000000;
+    margin-left: 5px;
+    font-size: 17px;
+}
+.float{
+    animation-name: float;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 }
 
-
+@keyframes float{
+    from{
+        transform: translate3d(0, 0, 0);
+        filter: brightness(100%);
+    }
+    to{
+        transform: translate3d(0, -15px, 0);
+        filter: brightness(110%);
+    }
+}
 
 @media (min-width: 769px) and (max-width: 1140px){
     .container{
