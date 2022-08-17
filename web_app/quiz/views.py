@@ -10,6 +10,9 @@ def index(request):
 def quiz(request):
     return render(request, 'quiz/quiz.html')
 
+def resultado(request):
+    return render(request, 'quiz/resultado.html')
+
 
 def login(request):
     context = {}
@@ -50,3 +53,5 @@ def cadastro(request):
             cad.realizar_cadastro(nome_empresa_cad, email_cad, senha_cad, confirm_senha_cad)
 
     return render(request, 'quiz/cadastro.html', context)
+
+

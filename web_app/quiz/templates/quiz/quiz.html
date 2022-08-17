@@ -32,14 +32,15 @@
             <div class="step rounded-pill d-inline-block text-center position-relative">4</div>
             <div class="step rounded-pill d-inline-block text-center position-relative">5</div>
          </div>
-         <form class="multisteps_form position-relative" id="wizard" method="POST" action="">
+         <form class="multisteps_form position-relative" id="wizard" method="POST" action="{% url 'resultado' %}">
+            {% csrf_token %}
             <!------------------------- Step-1 ----------------------------->
             <div class="multisteps_form_panel active" data-animation="slideVert">
                <div class="form_content">
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">What First International Yoga Day is Observed?</h1>
+                           <h1 class="text-white">A Sua empresa avaliou os processos internos para descobrir se estão em conformidade com a LGPD?</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -53,29 +54,29 @@
                               <li>
                                  <label for="opt_1" class="step_1 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
                                     <span class="label-pointer rounded-pill text-center">A</span>
-                                    <input type="radio" id="opt_1" name="stp_1_select_option" value="21 June 2014" checked>
-                                    <span class="label-content d-inline-block text-center rounded-pill">21 June 2014</span>
+                                    <input type="radio" id="opt_1" name="stp_1_valor_selecao" value="0" checked>
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_2" class="step_1 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
                                     <span class="label-pointer rounded-pill text-center">B</span>
-                                    <input type="radio" id="opt_2" name="stp_1_select_option" value="21 June 2015">
-                                    <span class="label-content d-inline-block text-center rounded-pill">21 June 2015</span>
+                                    <input type="radio" id="opt_2" name="stp_1_valor_selecao" value="1">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_3" class="step_1 rounded-pill animate__animated animate__fadeInRight animate_100ms">
                                     <span class="label-pointer rounded-pill text-center">C</span>
-                                    <input type="radio" id="opt_3" name="stp_1_select_option" value="8 June 2016">
-                                    <span class="label-content d-inline-block text-center rounded-pill">8 June 2016</span>
+                                    <input type="radio" id="opt_3" name="stp_1_valor_selecao" value="2">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_4" class="step_1 animate__animated animate__fadeInRight animate_150ms">
                                     <span class="label-pointer rounded-pill text-center">D</span>
-                                    <input type="radio" id="opt_4" name="stp_1_select_option" value="21 September 2015">
-                                    <span class="label-content d-inline-block text-center rounded-pill">21 Sept 2015</span>
+                                    <input type="radio" id="opt_4" name="stp_1_valor_selecao" value="3">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
                                  </label>
                               </li>
                            </ul>
@@ -85,7 +86,7 @@
                </div>
                <!---------- Form Button ---------->
                <div class="form_btn py-5 d-flex justify-content-center align-items-center">
-                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Next Question <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
                </div>
             </div>
             <!------------------------- Step-2 ----------------------------->
@@ -94,7 +95,7 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">Which option best Describes your Job?</h1>
+                           <h1 class="text-white">Foi indicado um responsável, Encarregado de proteção de dados?</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -107,26 +108,26 @@
                            <ul class="text-uppercase list-unstyled">
                               <li>
                                  <label for="opt_5" class="step_2 rounded-pill animate__animated animate__fadeInRight animate_25ms">
-                                    <span class="label-pointer rounded-circle text-center">A</span><input type="radio" id="opt_5" class="required" name="stp_2_select_option" value="business" required>
-                                    <span class="label-content d-inline-block text-center rounded-pill">business</span>
+                                    <span class="label-pointer rounded-circle text-center">A</span><input type="radio" id="opt_5" class="required" name="stp_2_valor_selecao" value="0" required>
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_6" class="step_2 rounded-pill animate__animated animate__fadeInRight animate_50ms">
-                                    <span class="label-pointer rounded-circle text-center">B</span><input type="radio" id="opt_6" name="stp_2_select_option" value="Employee">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Employee</span>
+                                    <span class="label-pointer rounded-circle text-center">B</span><input type="radio" id="opt_6" name="stp_2_valor_selecao" value="1">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_7" class="step_2 rounded-pill animate__animated animate__fadeInRight animate_100ms">
-                                    <span class="label-pointer rounded-circle text-center">C</span><input type="radio" id="opt_7" name="stp_2_select_option" value="Journalist">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Journalist</span>
+                                    <span class="label-pointer rounded-circle text-center">C</span><input type="radio" id="opt_7" name="stp_2_valor_selecao" value="2">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_8" class="step_2 rounded-pill animate__animated animate__fadeInRight animate_150ms">
-                                    <span class="label-pointer rounded-circle text-center">D</span><input type="radio" id="opt_8" name="stp_2_select_option" value="Other">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Other</span>
+                                    <span class="label-pointer rounded-circle text-center">D</span><input type="radio" id="opt_8" name="stp_2_valor_selecao" value="3">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
                                  </label>
                               </li>
                            </ul>
@@ -136,8 +137,8 @@
                </div>
                <!---------- Form Button ---------->
                <div class="form_btn py-5 d-flex justify-content-center align-items-center">
-                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Last Question</button>
-                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Next Question <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
                </div>
             </div>
             <!------------------------- Step-3 ----------------------------->
@@ -146,7 +147,7 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">Which option best Describes your Job?</h1>
+                           <h1 class="text-white">Existe procedimento de informação aos titulares caso haja vazamento dos dados?</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -159,26 +160,26 @@
                            <ul class="text-uppercase list-unstyled">
                               <li>
                                  <label for="opt_9" class="step_3 rounded-pill animate__animated animate__fadeInRight animate_25ms">
-                                    <span class="label-pointer rounded-circle text-center">A</span><input type="radio" id="opt_9" class="required" name="stp_3_select_option" value="business" required>
-                                    <span class="label-content d-inline-block text-center rounded-pill">business</span>
+                                    <span class="label-pointer rounded-circle text-center">A</span><input type="radio" id="opt_9" class="required" name="stp_3_valor_selecao" value="0" required>
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_10" class="step_3 rounded-pill animate__animated animate__fadeInRight animate_50ms">
-                                    <span class="label-pointer rounded-circle text-center">B</span><input type="radio" id="opt_10" name="stp_3_select_option" value="Employee">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Employee</span>
+                                    <span class="label-pointer rounded-circle text-center">B</span><input type="radio" id="opt_10" name="stp_3_valor_selecao" value="1">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_11" class="step_3 rounded-pill animate__animated animate__fadeInRight animate_100ms">
-                                    <span class="label-pointer rounded-circle text-center">C</span><input type="radio" id="opt_11" name="stp_3_select_option" value="Journalist">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Journalist</span>
+                                    <span class="label-pointer rounded-circle text-center">C</span><input type="radio" id="opt_11" name="stp_3_valor_selecao" value="2">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_12" class="step_3 rounded-pill animate__animated animate__fadeInRight animate_150ms">
-                                    <span class="label-pointer rounded-circle text-center">D</span><input type="radio" id="opt_12" name="stp_3_select_option" value="Other">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Other</span>
+                                    <span class="label-pointer rounded-circle text-center">D</span><input type="radio" id="opt_12" name="stp_3_valor_selecao" value="3">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
                                  </label>
                               </li>
                            </ul>
@@ -188,8 +189,8 @@
                </div>
                <!---------- Form Button ---------->
                <div class="form_btn py-5 d-flex justify-content-center align-items-center">
-                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Last Question</button>
-                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Next Question <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
                </div>
             </div>
             <!------------------------- Step-4 ----------------------------->
@@ -198,7 +199,7 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">Which option best Describes your Job?</h1>
+                           <h1 class="text-white">Os dados são eliminados de forma correta ao fim do tratamento?</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -211,26 +212,26 @@
                            <ul class="text-uppercase list-unstyled">
                               <li>
                                  <label for="opt_13" class="step_4 rounded-pill animate__animated animate__fadeInRight animate_25ms">
-                                    <span class="label-pointer rounded-circle text-center">A</span><input type="radio" id="opt_13" class="required" name="stp_4_select_option" value="business" required>
-                                    <span class="label-content d-inline-block text-center rounded-pill">business</span>
+                                    <span class="label-pointer rounded-circle text-center">A</span><input type="radio" id="opt_13" class="required" name="stp_4_valor_selecao" value="0" required>
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_14" class="step_4 rounded-pill animate__animated animate__fadeInRight animate_50ms">
-                                    <span class="label-pointer rounded-circle text-center">B</span><input type="radio" id="opt_14" name="stp_4_select_option" value="Employee">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Employee</span>
+                                    <span class="label-pointer rounded-circle text-center">B</span><input type="radio" id="opt_14" name="stp_4_valor_selecao" value="1">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_15" class="step_4 rounded-pill animate__animated animate__fadeInRight animate_100ms">
-                                    <span class="label-pointer rounded-circle text-center">C</span><input type="radio" id="opt_7" name="stp_4_select_option" value="Journalist">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Journalist</span>
+                                    <span class="label-pointer rounded-circle text-center">C</span><input type="radio" id="opt_7" name="stp_4_valor_selecao" value="2">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_16" class="step_4 rounded-pill animate__animated animate__fadeInRight animate_150ms">
-                                    <span class="label-pointer rounded-circle text-center">D</span><input type="radio" id="opt_16" name="stp_4_select_option" value="Other">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Other</span>
+                                    <span class="label-pointer rounded-circle text-center">D</span><input type="radio" id="opt_16" name="stp_4_valor_selecao" value="3">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
                                  </label>
                               </li>
                            </ul>
@@ -240,8 +241,8 @@
                </div>
                <!---------- Form Button ---------->
                <div class="form_btn py-5 d-flex justify-content-center align-items-center">
-                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Last Question</button>
-                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Next Question <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
                </div>
             </div>
             <!------------------------- Step-5 ----------------------------->
@@ -250,7 +251,7 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">Virtual Team Building Game For Remote Teams?</h1>
+                           <h1 class="text-white">Todos os dados pessoais são obtidos o devido consentimento do titular?</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -263,26 +264,26 @@
                            <ul class="text-uppercase list-unstyled">
                               <li>
                                  <label for="opt_17" class="step_5 rounded-pill animate__animated animate__fadeInRight animate_25ms">
-                                    <span class="label-pointer rounded-circle text-center">A</span><input type="radio" id="opt_17" name="stp_5_select_option" value="Zoom">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Zoom</span>
+                                    <span class="label-pointer rounded-circle text-center">A</span><input type="radio" id="opt_17" name="stp_5_valor_selecao" value="0">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_18" class="step_5 rounded-pill animate__animated animate__fadeInRight animate_50ms">
-                                    <span class="label-pointer rounded-circle text-center">B</span><input type="radio" id="opt_18" name="stp_5_select_option" value="Skype">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Skype</span>
+                                    <span class="label-pointer rounded-circle text-center">B</span><input type="radio" id="opt_18" name="stp_5_valor_selecao" value="1">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_19" class="step_5 rounded-pill animate__animated animate__fadeInRight animate_100ms">
-                                    <span class="label-pointer rounded-circle text-center">C</span><input type="radio" id="opt_19" name="stp_5_select_option" value="Google">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Google</span>
+                                    <span class="label-pointer rounded-circle text-center">C</span><input type="radio" id="opt_19" name="stp_5_valor_selecao" value="2">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
                                  </label>
                               </li>
                               <li>
                                  <label for="opt_20" class="step_5 rounded-pill animate__animated animate__fadeInRight animate_150ms">
-                                    <span class="label-pointer rounded-circle text-center">D</span><input type="radio" id="opt_20" name="stp_5_select_option" value="Facebook">
-                                    <span class="label-content d-inline-block text-center rounded-pill">Facebook</span>
+                                    <span class="label-pointer rounded-circle text-center">D</span><input type="radio" id="opt_20" name="stp_5_valor_selecao" value="3">
+                                    <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
                                  </label>
                               </li>
                            </ul>
@@ -292,8 +293,8 @@
                </div>
                <!---------- Form Button ---------->
                <div class="form_btn py-5 d-flex justify-content-center align-items-center">
-                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Last Question</button>
-                  <button type="submit" class="f_btn rounded-pill active text-uppercase" id="nextBtn"> Submit</button>
+                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                  <button type="submit" class="f_btn rounded-pill active text-uppercase" id="nextBtn"> Enviar</button>
                </div>
             </div>
          </form>
