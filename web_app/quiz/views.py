@@ -7,6 +7,9 @@ from .cadastro import Cadastro
 def index(request):
     return render(request, 'quiz/index.html')
 
+def quiz(request):
+    return render(request, 'quiz/quiz.html')
+
 
 def login(request):
     context = {}
