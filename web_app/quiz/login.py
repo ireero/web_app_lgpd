@@ -6,7 +6,7 @@ class Login:
     def __init__(self):
         self.lista_usuarios = Usuario.objects.all()
 
-    indice_usuario_logado = 0
+    email_usuario_logado = 0
 
     # Função que verifica o usuário e senha
     def verificarLogin(self, email, pas) -> int:
@@ -25,7 +25,7 @@ class Login:
                 pas_verif += 1
             if email_verif == 1 and pas_verif == 1:
                 print('Parabéns você conseguiu efetuar o Login!')
-                self.indice_usuario_logado = indice
+                self.email_usuario_logado = email
                 return 1
         # Verifica se o erro no login foi no usuário ou senha, até nos dois caso ambos estejam errados.
         if email_verif == 0 and pas_verif == 0:

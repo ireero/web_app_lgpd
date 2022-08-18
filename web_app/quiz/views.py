@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .login import Login
 from .erro import Erro
 from .cadastro import Cadastro
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 
 def index(request):
@@ -33,6 +35,7 @@ def login(request):
 
         if log.verificarLogin(email, senha) == 1:
             context = {}
+            return HttpResponseRedirect(reverse('quiz'))
 
     return render(request, 'quiz/login_register.html', context)
 
@@ -49,8 +52,13 @@ def cadastro(request):
         senha_cad = request.POST.get('senha_cad', None)
         confirm_senha_cad = request.POST.get('confirm_senha_cad', None)
 
+        if error.erros:
+            context['erros'] = error.erros
+            print(context)
+
         if error.verificar_campos_vazios_cadastro(nome_empresa_cad, email_cad, senha_cad, confirm_senha_cad) == 1:
             cad.realizar_cadastro(nome_empresa_cad, email_cad, senha_cad, confirm_senha_cad)
+            return HttpResponseRedirect(reverse('login'))
 
     return render(request, 'quiz/cadastro.html', context)
 

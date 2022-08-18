@@ -22,7 +22,7 @@ class Erro:
 
         # Verifica se os campos estão vazios
         if email == '' and senha == '' and nome_empresa == '' and confirmar_senha == '':
-            self.erros = 'Por favor insira algo para validação!'
+            self.erros['erro'] = 'Por favor insira algo para validação!'
             return 0
         elif nome_empresa == '':
             self.erros['erro'] = 'Por favor insira o nome da empresa!'
@@ -34,6 +34,6 @@ class Erro:
             self.erros['erro'] = 'Por favor insira uma senha válida'
             return 0
         elif confirmar_senha == '':
-            self.erros['erro'] = 'Por confirme a sua senha!'
+            self.erros['erro'] = 'Por favor confirme a sua senha!'
             return 0
         return 1
