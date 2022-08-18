@@ -7,5 +7,5 @@ class Respostas:
 
     def __init__(self):
         # Lista de respostas que estarão disponiveis para o usuário responder
-        self.lista_de_respostas = ['1 - Não, mas estamos planejando essa avaliação.', '2 - Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.',
-                    '3 - Sim, e já começamos a tomar providência e adequálas a LGPD', '4 - Não, não é necessário.']
+        self.lista_de_respostas = []
+        self.respostas_qtd = []

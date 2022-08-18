@@ -4,12 +4,34 @@ from .erro import Erro
 from .cadastro import Cadastro
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from .respostas import Respostas
+from .pontuacoes import Pontuacoes
 
 
 def index(request):
     return render(request, 'quiz/index.html')
 
 def quiz(request):
+    context = {}
+    respostas = Respostas()
+    pont = Pontuacoes()
+
+    if request.method == 'POST':
+        for v in range(1, 6):
+            respostas.lista_de_respostas.append(int(request.POST.get(f'stp_{v}_valor_selecao', None)))
+        
+        for p in range(0, 4): # Adiciona a quantidade de cada tipo de resposta que foi dada na lista respostas_qtd
+            respostas.respostas_qtd.append(respostas.lista_de_respostas.count(p))
+
+
+        if respostas.lista_de_respostas:
+            pont.calculo_pontuacao_parcial(respostas.respostas_qtd)
+            pont.calculo_estrela()
+            context = {
+                'pontuacao': pont.get_estrelas()
+            }
+            return render(request, 'quiz/resultado.html', context)    
+
     return render(request, 'quiz/quiz.html')
 
 def resultado(request):
