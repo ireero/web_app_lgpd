@@ -148,6 +148,7 @@ footer{
 #div_fixed{
     position: fixed;
     bottom: 20px;
+    right: 20px;
     margin: 0 20px;
     background-color: #00BFFF;
     width: 270px;
