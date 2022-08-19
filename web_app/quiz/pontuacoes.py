@@ -10,7 +10,7 @@ class Pontuacoes:
             -> Função utilizada para calcular a quantidade de estrelas baseada no teste de adequação a LPGD.
         :return: Não retorna nada.
         """
-        self.__estrelas = (5 * self.__pontuacao_parcial) / (5 * 2)  # Calculo das estrelas
+        self.__estrelas = (5 * self.__pontuacao_parcial) / (9 * 2)  # Calculo das estrelas
 
     # Função utilizada para calcular a pontuação parcial do usuário (100% = 2 pontos, 50% = 1 ponto)
     def calculo_pontuacao_parcial(self, lista_respostas_qtd) -> None:

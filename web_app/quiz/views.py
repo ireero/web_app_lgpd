@@ -17,7 +17,7 @@ def quiz(request):
     pont = Pontuacoes()
 
     if request.method == 'POST':
-        for v in range(1, 6):
+        for v in range(1, 10):
             respostas.lista_de_respostas.append(int(request.POST.get(f'stp_{v}_valor_selecao', None)))
         
         for p in range(0, 4): # Adiciona a quantidade de cada tipo de resposta que foi dada na lista respostas_qtd
