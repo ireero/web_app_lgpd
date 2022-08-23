@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from .login import Login
-from .erro import Erro
-from .cadastro import Cadastro
+from .modulos.login import Login
+from .modulos.erro import Erro
+from .modulos.cadastro import Cadastro
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .respostas import Respostas
-from .pontuacoes import Pontuacoes
+from .modulos.respostas import Respostas
+from .modulos.pontuacoes import Pontuacoes
 
 
 def index(request):
@@ -28,9 +28,11 @@ def quiz(request):
             pont.calculo_pontuacao_parcial(respostas.respostas_qtd)
             pont.calculo_estrela()
             context = {
-                'pontuacao': pont.get_estrelas()
+                'pontuacao': round(pont.get_estrelas(), 2),
             }
-            return render(request, 'quiz/resultado.html', context)    
+            return render(request, 'quiz/resultado.html', context)
+
+  
 
     return render(request, 'quiz/quiz.html')
 
