@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .login import Login
 from .erro import Erro
-from .cadastro import Cadastro
+from .cadastro import Cadastrar
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .respostas import Respostas
@@ -65,7 +65,7 @@ def login(request):
 def cadastro(request):
     context = {}
     error = Erro()
-    cad = Cadastro()
+    cad = Cadastrar()
 
     if request.method == 'POST':
 

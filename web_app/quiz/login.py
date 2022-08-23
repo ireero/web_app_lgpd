@@ -1,10 +1,10 @@
-from .models import Usuario
+from .models import Cadastro
 
 
 class Login:
 
     def __init__(self):
-        self.lista_usuarios = Usuario.objects.all()
+        self.lista_usuarios = Cadastro.objects.all()
 
     email_usuario_logado = 0
 
