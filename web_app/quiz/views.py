@@ -3,7 +3,6 @@ from django.shortcuts import render
 from .forms import CadastroForm
 from .login import Login
 from .erro import Erro
-from .cadastro import Cadastrar
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .respostas import Respostas
