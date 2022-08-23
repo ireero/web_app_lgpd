@@ -11,38 +11,7 @@
   <!-- Register Form -->
         <form class="form" id="createAccount" action="{% url 'cadastro' %}" method="POST">
           {% csrf_token %}
-            <h1 class="form__title">Crie uma conta</h1>
-            {% if erros %}
-                <div class="form__input-error-message">{{ erros.erro }}</div>
-            {% endif %}
-            <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" id="nome_empresa_cad" name="nome_empresa_cad" autofocus placeholder="Nome da empresa">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" id="nome_colaborador" name="nome_colaborador" autofocus placeholder="Nome do colaborador">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" id="funcao_colaborador" name="funcao_colaborador" autofocus placeholder="Função do colaborador">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" id="whatsapp_colaborador" name="whatsapp_colaborador" autofocus placeholder="WhatsApp do colaborador">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" id="email_cad" name="email_cad" autofocus placeholder="E-mail do colaborador">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" id="senha_cad" name="senha_cad" autofocus placeholder="Senha">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" id="confirm_senha_cad" name="confirm_senha_cad" autofocus placeholder="Confirmar senha">
-                <div class="form__input-error-message"></div>
-            </div>
+            {{ form.as_p }}
             <button class="form__button" type="submit">Cadastrar</button>
             <p class="form__text">
                 <a class="form__link" href="{% url 'login' %}" id="linkLogin">Já possui uma conta? Acesse</a>
