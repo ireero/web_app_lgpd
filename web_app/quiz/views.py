@@ -1,13 +1,10 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from .modulos.login import Login
 from .modulos.erro import Erro
 from .modulos.cadastro import Cadastro
-=======
-from .login import Login
-from .erro import Erro
-from .cadastro import Cadastrar
->>>>>>> teste
+from .modulos.login import Login
+from .modulos.erro import Erro
+from .modulos.cadastro import Cadastrar
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .modulos.respostas import Respostas

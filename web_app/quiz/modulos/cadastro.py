@@ -1,4 +1,4 @@
-from .models import Usuario
+from ..models import Cadastro
 from django.utils import timezone
 
 class Cadastrar:
