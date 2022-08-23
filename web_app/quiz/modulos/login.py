@@ -23,7 +23,7 @@ class Login:
         """
         for indice, valor in enumerate(self.lista_usuarios):
             email_verif = pas_verif = 0
-            if valor.email == email:
+            if valor.email_colaborador == email:
                 email_verif += 1
             if valor.senha == pas:
                 pas_verif += 1

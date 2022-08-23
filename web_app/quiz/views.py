@@ -11,7 +11,10 @@ from .modulos.cadastro import Cadastrar
 from .forms import CadastroForm
 from .login import Login
 from .erro import Erro
+<<<<<<< HEAD
 from .cadastro import Cadastrar
+>>>>>>> teste
+=======
 >>>>>>> teste
 from django.http import HttpResponseRedirect
 from django.urls import reverse
