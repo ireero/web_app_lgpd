@@ -1,10 +1,18 @@
 from django.shortcuts import render
+<<<<<<< HEAD
 from .modulos.login import Login
 from .modulos.erro import Erro
 from .modulos.cadastro import Cadastro
 from .modulos.login import Login
 from .modulos.erro import Erro
 from .modulos.cadastro import Cadastrar
+=======
+
+from .forms import CadastroForm
+from .login import Login
+from .erro import Erro
+from .cadastro import Cadastrar
+>>>>>>> teste
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .modulos.respostas import Respostas
@@ -69,24 +77,16 @@ def login(request):
 
 def cadastro(request):
     context = {}
-    error = Erro()
-    cad = Cadastrar()
 
-    if request.method == 'POST':
 
-        nome_empresa_cad = request.POST.get('nome_empresa_cad', None)
-        email_cad = request.POST.get('email_cad', None)
-        senha_cad = request.POST.get('senha_cad', None)
-        confirm_senha_cad = request.POST.get('confirm_senha_cad', None)
+    form = CadastroForm(request.POST)
 
-        if error.erros:
-            context['erros'] = error.erros
-            print(context)
+    if form.is_valid():
+        cliente = form.save()
+        form = CadastroForm()
 
-        if error.verificar_campos_vazios_cadastro(nome_empresa_cad, email_cad, senha_cad, confirm_senha_cad) == 1:
-            cad.realizar_cadastro(nome_empresa_cad, email_cad, senha_cad, confirm_senha_cad)
-            return HttpResponseRedirect(reverse('login'))
-
+    context = {
+        'form': form
+    }
     return render(request, 'quiz/cadastro.html', context)
-
 
