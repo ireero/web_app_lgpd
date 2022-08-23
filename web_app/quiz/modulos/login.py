@@ -1,10 +1,14 @@
+<<<<<<< HEAD:web_app/quiz/modulos/login.py
 from ..models import Usuario
+=======
+from .models import Cadastro
+>>>>>>> teste:web_app/quiz/login.py
 
 
 class Login:
 
     def __init__(self):
-        self.lista_usuarios = Usuario.objects.all()
+        self.lista_usuarios = Cadastro.objects.all()
 
     email_usuario_logado = 0
 
