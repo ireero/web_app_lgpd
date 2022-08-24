@@ -17,7 +17,7 @@ class Cadastro(models.Model):
     email_colaborador = models.EmailField(max_length=100, unique=True)
     whatsapp_colaborador = models.CharField(max_length=14, unique=True)
     senha = models.CharField(max_length=30, blank=False, null=False)
-    termo_de_uso = models.CharField(max_length=1, blank=False, null=False)
+    termo_de_uso = models.BooleanField('Eu aceito os termos de uso', default=False)
 
 class Quiz(models.Model):
 
