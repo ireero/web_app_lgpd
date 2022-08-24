@@ -143,6 +143,10 @@ footer{
     text-align: center;
     font-size: 10px;
 }
+footer a{
+    text-decoration: none;
+    color: #00BFFF;
+}
 
 
 #div_fixed{
