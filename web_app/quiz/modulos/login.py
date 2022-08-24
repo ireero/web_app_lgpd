@@ -1,8 +1,4 @@
-<<<<<<< HEAD:web_app/quiz/modulos/login.py
-from ..models import Usuario
-=======
-from .models import Cadastro
->>>>>>> teste:web_app/quiz/login.py
+from ..models import Cadastro
 
 
 class Login:
