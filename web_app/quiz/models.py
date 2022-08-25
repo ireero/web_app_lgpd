@@ -19,29 +19,31 @@ class Cadastro(models.Model):
     senha = models.CharField(max_length=30, blank=False, null=False)
     termo_de_uso = models.BooleanField('Eu aceito os termos de uso', default=False)
 
-class Quiz(models.Model):
+
+class Pergunta(models.Model):
 
     def __str__(self) -> str:
-        return self.data_de_envio
+        return self.pergunta
 
-    respostas_quiz = models.CharField(max_length=1, default=True, null=True)
-    data_de_envio = models.DateTimeField('data de envio', null=True, blank=True)
-    cadastro = models.ForeignKey(Cadastro, on_delete=models.CASCADE)
+    pergunta = models.CharField(max_length=255, unique=True)
+    
 
-
-class Perguntas(models.Model):
-
-    def __str__(self) -> str:
-        return self.perguntas
-
-    perguntas = models.CharField(max_length=255)
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
-
-
-class Respostas(models.Model):
+class OpcaoResposta(models.Model):
 
     def __str__(self) -> str:
         return self.respostas
 
-    respostas = models.CharField(max_length=125)
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    respostas = models.CharField(max_length=125, unique=True)
+
+
+class Questao(models.Model):
+
+    def __str__(self) -> str:
+        return str(self.data_de_envio) + '  -->  ' + str(self.empresa)
+
+    resposta = models.CharField(max_length=1, default=None, null=True)
+    data_de_envio = models.DateTimeField('data de envio', null=True, blank=True)
+    empresa = models.ForeignKey(Cadastro, on_delete=models.CASCADE)
+    pergunta = models.ForeignKey(Pergunta, on_delete=models.CASCADE)
+    opcao_resposta = models.ForeignKey(OpcaoResposta, on_delete=models.DO_NOTHING)
+

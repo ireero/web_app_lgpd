@@ -18,11 +18,11 @@ class Pontuacoes:
             -> Função utilizada para calcular a pontuação parcial do usuário no teste de adequação
         :return: Não retorna nada
         """
-        for i, c in enumerate(lista_respostas_qtd):  # Esse for anda pela lista respostas_qtd e também pelo seu indice
-            if (i == 0 and c >= 1) or (i == 1 and c >= 1):  # Verifica as respostas de 50%
-                self.__pontuacao_parcial += (c * 1)
-            elif i == 2 and c >= 1:  # Verifica a resposta de 100%
-                self.__pontuacao_parcial += (c * 2)
+        for c in lista_respostas_qtd:  # Esse for anda pela lista respostas_qtd e também pelo seu indice
+            if c == 1 or c == 0:  # Verifica as respostas de 50%
+                self.__pontuacao_parcial += 1
+            elif c == 2:  # Verifica a resposta de 100%
+                self.__pontuacao_parcial += 2
 
     # Retorna o valor de estrelas
     def get_estrelas(self):

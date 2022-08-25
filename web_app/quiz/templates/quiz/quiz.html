@@ -37,7 +37,7 @@
             <div class="step rounded-pill d-inline-block text-center position-relative">9</div>
 
          </div>
-         <form class="multisteps_form position-relative" id="wizard" method="POST" action="{% url 'quiz' %}">
+         <form class="multisteps_form position-relative" id="wizard" method="POST" action="{% url 'quiz' id_usuario %}">
             {% csrf_token %}
                <!------------------------- Step-1 ----------------------------->
                <div class="multisteps_form_panel active" data-animation="slideVert">
@@ -356,7 +356,8 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">Os dados são eliminados de forma correta ao fim do tratamento?</h1>
+                           <h1 class="text-white">O órgão já realizou um planejamento do seu Programa
+Institucional de Privacidade de Dados? </h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
