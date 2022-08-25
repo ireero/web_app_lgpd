@@ -147,6 +147,9 @@ footer a{
     text-decoration: none;
     color: #00BFFF;
 }
+footer a:hover{
+    text-decoration: underline;
+}
 
 
 #div_fixed{

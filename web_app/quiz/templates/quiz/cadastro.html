@@ -1,22 +1,30 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Cadastro</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="{% static 'quiz/css/style_login.css' %}">
 </head>
 <body>
     <div class="container">
   <!-- Register Form -->
+        <h1>Cadastro</h1>
         <form class="form" id="createAccount" action="{% url 'cadastro' %}" method="POST">
           {% csrf_token %}
             {{ form.as_p }}
             <button class="form__button" type="submit">Cadastrar</button>
-            <p class="form__text">
-                <a class="form__link" href="{% url 'login' %}" id="linkLogin">Já possui uma conta? Acesse</a>
-            </p>
         </form>
+        <p class="form__text">
+            <a class="form__link" href="{% url 'login' %}" id="linkLogin">Já possui uma conta? Acesse</a>
+        </p>
     </div>
+    
+
+
+    <script src="{% static 'quiz/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'quiz/js/jquery.mask.min.js' %}"></script>
+    <script src="{% static 'quiz/js/mask.js' %}"></script>
 </body>
 </html>

@@ -23,6 +23,9 @@ body {
     border-radius: var(--border-radius);
     background: #ffffff;
 }
+.container h1{
+    text-align: center;
+}
 
 .container,
 .form__input,
@@ -125,4 +128,53 @@ body {
 
 .form__link:hover {
     text-decoration: underline;
+}
+
+/* CSS do DjangoForms */
+
+.errorlist{
+    display: none;
+}
+
+#createAccount{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#createAccount p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+#createAccount p:last-of-type{
+    display: flex;
+    border: none;
+    justify-content: center;
+}
+#createAccount label{
+    display: none;
+}
+#createAccount p:last-of-type label{
+    display: block;
+}
+
+.input, .input-number{
+    outline: none;
+    border: none;
+    width: 90%;
+    font-size: 16px;
+    padding: 4px 6px;
+    border-bottom: 3px solid #5c5c5c;
+    border-radius: 2px;
+}
+.input:hover, .input-number:hover{
+    border-bottom: 3px solid #0077ff;
+}
+.input:focus, .input-number:focus{
+    border-bottom: 5px solid #0077ff;
+}
+#input-check{
+    margin-left: 10px;
+    transform: scale(1.4);
 }
