@@ -13,9 +13,9 @@ class Cadastro(models.Model):
 
     nome_empresa = models.CharField(max_length=100, blank=False, null=False)
     nome_colaborador = models.CharField(max_length=100, blank=False, null=False)
-    funcao_colaborador = models.CharField(max_length=100)
+    funcao_colaborador = models.CharField(max_length=120)
     email_colaborador = models.EmailField(max_length=100, unique=True)
-    whatsapp_colaborador = models.CharField(max_length=14, unique=True)
+    whatsapp_colaborador = models.CharField(max_length=20, unique=True)
     senha = models.CharField(max_length=30, blank=False, null=False)
     termo_de_uso = models.BooleanField('Eu aceito os termos de uso', default=False)
 
@@ -25,7 +25,7 @@ class Pergunta(models.Model):
     def __str__(self) -> str:
         return self.pergunta
 
-    pergunta = models.CharField(max_length=255, unique=True)
+    pergunta = models.CharField(max_length=300, unique=True)
     
 
 class OpcaoResposta(models.Model):
@@ -33,7 +33,7 @@ class OpcaoResposta(models.Model):
     def __str__(self) -> str:
         return self.respostas
 
-    respostas = models.CharField(max_length=125, unique=True)
+    respostas = models.CharField(max_length=200, unique=True)
 
 
 class Questao(models.Model):
