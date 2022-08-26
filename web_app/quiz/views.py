@@ -76,7 +76,7 @@ def cadastro(request):
     if form.is_valid():
         cliente = form.save()
         form = CadastroForm()
-
+        
     context = {
         'form': form
     }
