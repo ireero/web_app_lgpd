@@ -26,6 +26,7 @@ class Pergunta(models.Model):
         return self.pergunta
 
     pergunta = models.CharField(max_length=300, unique=True)
+    pesos = models.IntegerField(default=False, null=False)
     
 
 class OpcaoResposta(models.Model):
