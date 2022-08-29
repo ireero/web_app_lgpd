@@ -1,11 +1,12 @@
 from django import forms
 from .models import Cadastro
-    
-    
+from captcha.fields import CaptchaField
+
 
 
 class CadastroForm(forms.ModelForm):
-    
+    captcha = CaptchaField()
+
     class Meta:
         model = Cadastro
         fields = '__all__'

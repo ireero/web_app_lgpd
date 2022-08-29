@@ -15,7 +15,7 @@ class Cadastro(models.Model):
     nome_colaborador = models.CharField(max_length=100, blank=False, null=False)
     funcao_colaborador = models.CharField(max_length=120)
     email_colaborador = models.EmailField(max_length=100, unique=True)
-    whatsapp_colaborador = models.CharField(max_length=20, unique=True)
+    whatsapp_colaborador = models.CharField(max_length=25, unique=True)
     senha = models.CharField(max_length=30, blank=False, null=False)
     termo_de_uso = models.BooleanField('Eu aceito os termos de uso', default=False)
 
