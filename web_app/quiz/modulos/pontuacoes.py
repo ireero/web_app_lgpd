@@ -37,7 +37,10 @@ class Pontuacoes:
 
     # Retorna o valor de estrelas
     def get_estrelas(self):
-        return self.__estrelas
+        if(self.__estrelas > 6):
+            return 6
+        else:
+            return self.__estrelas
 
     # Retorna o valor da pontuação parcial
     def get_pontuacao_parcial(self):
