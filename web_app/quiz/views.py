@@ -67,7 +67,7 @@ def login(request):
 
 
 def cadastro(request):
-    human = 0
+    human = 3
 
     if request.POST:
         form = CadastroForm(request.POST)
@@ -76,9 +76,12 @@ def cadastro(request):
             cliente =  form.save()
             form = CadastroForm()
             human = 1
+        else:
+            form = CadastroForm()
+            human = 0
     else:
         form = CadastroForm()
-        
+
     context = {
     'form': form,
     'human': human
