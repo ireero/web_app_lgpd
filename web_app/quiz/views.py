@@ -67,31 +67,22 @@ def login(request):
 
 
 def cadastro(request):
-    context = {}
+    human = 0
 
     if request.POST:
         form = CadastroForm(request.POST)
 
         if form.is_valid():
-            cliente = form.save()
+            cliente =  form.save()
             form = CadastroForm()
-            message = 'Cadastro Efetuado'
-            context = {
-                'form': form,
-                'message': message
-            }
-        else:
-            form = CadastroForm()
-            messsage = 'Captcha Inválido'
-            context = {
-                'form': form,
-                'message': messsage
-            }
+            human = 1
     else:
         form = CadastroForm()
-        context = {
-            'form': form
-        }
+        
+    context = {
+    'form': form,
+    'human': human
+    }
 
     return render(request, 'quiz/cadastro.html', context)
 
