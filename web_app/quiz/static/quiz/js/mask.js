@@ -20,14 +20,14 @@ document.getElementById('id_captcha_1').placeholder = 'Captcha'
 const result = document.getElementById('form_msg').innerHTML;
 let divResult = document.getElementById('form_msg');
 
-    if(result == '1'){
+    if(result === '1'){
         divResult.style.display = 'flex' ;
         const textSuccess = 'Cadastro Efetuado';
         divResult.style.color = 'green';
         divResult.innerHTML = textSuccess;
 
     }
-    else if(result == '0'){
+    else if(result === '0'){
         divResult.style.display = 'flex' ;
         const textError = 'Captcha Inválido';
         divResult.innerHTML = textError;
