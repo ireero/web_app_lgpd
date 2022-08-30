@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from .models import Cadastro, Questao, Pergunta, OpcaoResposta
 from .modulos.login import Login
 from .forms import CadastroForm
@@ -36,9 +35,9 @@ def quiz(request, id_usuario):
         # retorna valores filtrando p = Questao.objects.filter(empresa=Cadastro.objects.get(id=id_usuario), data_de_envio=datetime.now())
 
         context = {
-            'estrelas': pont.get_estrelas()
+            'estrelas': round(pont.get_estrelas(),2)
         }
-        
+
         return render(request, 'quiz/resultado.html', context)
 
     return render(request, 'quiz/quiz.html')
@@ -68,17 +67,26 @@ def login(request):
 
 
 def cadastro(request):
-    context = {}
+    human = 0
 
+    if request.POST:
+        form = CadastroForm(request.POST)
 
-    form = CadastroForm(request.POST)
-
-    if form.is_valid():
-        cliente = form.save()
+        if form.is_valid():
+            cliente =  form.save()
+            form = CadastroForm()
+            human = 1
+    else:
         form = CadastroForm()
         
     context = {
-        'form': form
+    'form': form,
+    'human': human
     }
+
     return render(request, 'quiz/cadastro.html', context)
+
+
+def termo(request):
+    return render(request, 'quiz/termo.html')
 

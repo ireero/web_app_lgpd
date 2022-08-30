@@ -7,7 +7,7 @@ body {
     --border-radius: 4px;
 
     margin: 0;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,6 +17,7 @@ body {
 .container {
     width: 400px;
     max-width: 400px;
+    height: 100%;
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
@@ -147,7 +148,7 @@ body {
     align-items: center;
     padding: 5px;
 }
-#createAccount p:last-of-type{
+#createAccount p:nth-child(8){
     display: flex;
     border: none;
     justify-content: center;
@@ -155,7 +156,7 @@ body {
 #createAccount label{
     display: none;
 }
-#createAccount p:last-of-type label{
+#createAccount p:nth-child(8) label{
     display: block;
 }
 
@@ -177,4 +178,36 @@ body {
 #input-check{
     margin-left: 10px;
     transform: scale(1.4);
+}
+#form_msg{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+#createAccount p:nth-child(9){
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+#createAccount p .captcha{
+    width: 100px;
+}
+#createAccount p #id_captcha_1{
+    outline: none;
+    border: none;
+    width: 16%;
+    font-size: 16px;
+    padding: 4px 6px;
+    border-bottom: 3px solid #5c5c5c;
+    border-radius: 2px;
+}
+#createAccount p #id_captcha_1:hover{
+    border-bottom: 3px solid #0077ff;
+}
+#createAccount p #id_captcha_1:focus{
+    border-bottom: 5px solid #0077ff;
 }

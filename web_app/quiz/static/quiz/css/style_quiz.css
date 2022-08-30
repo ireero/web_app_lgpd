@@ -179,7 +179,7 @@ Author      : jthemes (https://themeforest.net/user/jthemes)
 }
 
 .form_img img {
-  width: 75%;
+  width: 100%;
 }
 
 .form_items label {
@@ -286,7 +286,7 @@ img {
 /* Botão flutuante */
 #div_fixed{
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
   margin: 0 20px;
   background-color: #00BFFF;
