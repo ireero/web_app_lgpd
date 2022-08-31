@@ -129,4 +129,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error','mysql.W003']

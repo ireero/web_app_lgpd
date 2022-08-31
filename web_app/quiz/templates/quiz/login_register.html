@@ -31,6 +31,9 @@
                 <a class="form__link" href="{% url 'cadastro' %}" id="linkCreateAccount">Não tem uma conta? Crie uma</a>
             </p>
         </form>
+        <div id="fail-msg">{{ fail }}</div>
     </div>
+
+    <script src="{% static 'quiz/js/login.js' %}"></script>
 </body>
 </html>

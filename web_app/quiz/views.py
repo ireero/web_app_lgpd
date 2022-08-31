@@ -47,8 +47,12 @@ def resultado(request):
 
 
 def login(request):
-    context = {}
+    fail = 0
+    context = {
+        'fail': fail
+    }
     perguntas = Pergunta.objects.all()
+
 
     if request.method == 'POST':
 
@@ -59,9 +63,15 @@ def login(request):
 
         if log.verificarLogin(email, senha) != 0:
             context = {
-                'id_usuario': log.verificarLogin(email, senha)
+                'id_usuario': log.verificarLogin(email, senha),
+                'fail' : fail
             }
             return render(request, 'quiz/quiz.html', context)
+        else:
+            fail = 1
+            context = {
+                'fail' : fail
+            }
 
     return render(request, 'quiz/login_register.html', context)
 
@@ -77,7 +87,6 @@ def cadastro(request):
             form = CadastroForm()
             human = 1
         else:
-            form = CadastroForm()
             human = 0
     else:
         form = CadastroForm()

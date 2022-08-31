@@ -1,19 +1,10 @@
-// Troca no DOM para, login e cadastro
+//Tratamento de login
+const result = document.getElementById('fail-msg').innerHTML;
+const divResult = document.getElementById('fail-msg');
 
-document.addEventListener("DOMContentLoaded", () => {
-    const loginForm = document.querySelector("#login");
-    const createAccountForm = document.querySelector("#createAccount");
+    if(result == '1'){
+        divResult.style.display = 'flex' ;
+        const textSuccess = 'E-mail/Senha inválido';
+        divResult.innerHTML = textSuccess;
+    }
 
-    document.querySelector("#linkCreateAccount").addEventListener("click", e => {
-        e.preventDefault();
-        loginForm.classList.add("form--hidden");
-        createAccountForm.classList.remove("form--hidden");
-    });
-
-    document.querySelector("#linkLogin").addEventListener("click", e => {
-        e.preventDefault();
-        loginForm.classList.remove("form--hidden");
-        createAccountForm.classList.add("form--hidden");
-    });
-
-});

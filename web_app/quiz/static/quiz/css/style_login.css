@@ -211,3 +211,13 @@ body {
 #createAccount p #id_captcha_1:focus{
     border-bottom: 5px solid #0077ff;
 }
+
+#fail-msg{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
+    padding: 10px;
+    color: #ff0000;
+    font-weight: bold;
+}
