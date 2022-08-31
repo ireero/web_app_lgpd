@@ -213,7 +213,7 @@ body {
 }
 
 #fail-msg{
-    display: flex;
+    display: none;
     justify-content: center;
     margin-top: 10px;
     align-items: center;
