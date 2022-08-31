@@ -1,7 +1,26 @@
+# Django #
+*.log
+*.pot
+*.pyc
 __pycache__
 
+
+# Backup files # 
+*.bak 
+
+#Git logs
 *.*~
 
-*.pyc
 
+#Enviroment and Idea files
 .idea
+venv/
+
+
+# Visual Studio Code # 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history

@@ -5,8 +5,8 @@ from captcha.fields import CaptchaField
 
 
 class CadastroForm(forms.ModelForm):
-    captcha = CaptchaField()
     confirmar_senha = forms.CharField(widget=forms.PasswordInput())
+    captcha = CaptchaField()
     
     class Meta:
         model = Cadastro

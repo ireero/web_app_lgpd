@@ -4,14 +4,15 @@ $(document).ready(function(){
 });
 
 //Bloco para colocar placeholder no input
-document.getElementById('id_nome_empresa').placeholder = 'Nome da Empresa'
-document.getElementById('id_nome_colaborador').placeholder = 'Nome do representante'
-document.getElementById('id_funcao_colaborador').placeholder = 'Função do representante'
-document.getElementById('id_email_colaborador').placeholder = 'E-mail corporativo'
-document.getElementById('id_whatsapp_colaborador').placeholder = 'Número do representante'
-document.getElementById('id_senha').placeholder = 'Senha'
+document.getElementById('id_nome_empresa').placeholder = 'Nome da Empresa';
+document.getElementById('id_nome_colaborador').placeholder = 'Nome do representante';
+document.getElementById('id_funcao_colaborador').placeholder = 'Função do representante';
+document.getElementById('id_email_colaborador').placeholder = 'E-mail corporativo';
+document.getElementById('id_whatsapp_colaborador').placeholder = 'Número do representante';
+document.getElementById('id_senha').placeholder = 'Senha';
 document.getElementById('id_senha').type = 'password';
-document.getElementById('id_captcha_1').placeholder = 'Captcha'
+document.getElementById('id_captcha_1').placeholder = 'Captcha';
+document.getElementById('id_confirmar_senha').placeholder = 'Confirmar Senha';
 
 
 
