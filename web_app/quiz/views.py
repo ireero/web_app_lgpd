@@ -83,9 +83,10 @@ def cadastro(request):
         form = CadastroForm(request.POST)
 
         if form.is_valid():
-            cliente =  form.save()
-            form = CadastroForm()
-            human = 1
+            if form.data['senha'] == form.data['confirmar_senha']:
+                cliente = form.save()
+                form = CadastroForm()
+                human = 1
         else:
             human = 0
     else:

@@ -6,10 +6,12 @@ from captcha.fields import CaptchaField
 
 class CadastroForm(forms.ModelForm):
     captcha = CaptchaField()
-
+    confirmar_senha = forms.CharField(widget=forms.PasswordInput())
+    
     class Meta:
         model = Cadastro
         fields = '__all__'
+    
 
     def __init__(self, *args, **kwargs):
         super(CadastroForm, self).__init__(*args, **kwargs)
@@ -19,6 +21,7 @@ class CadastroForm(forms.ModelForm):
         self.fields['email_colaborador'].widget.attrs.update({'class': 'input'})
         self.fields['whatsapp_colaborador'].widget.attrs.update({'class': 'input-number'})
         self.fields['senha'].widget.attrs.update({'class': 'input'})
+        self.fields['confirmar_senha'].widget.attrs.update({'class': 'input'})
         self.fields['termo_de_uso'].widget.attrs.update({'id': 'input-check'})
 
 
