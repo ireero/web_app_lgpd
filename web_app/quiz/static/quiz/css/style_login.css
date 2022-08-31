@@ -221,3 +221,12 @@ body {
     color: #ff0000;
     font-weight: bold;
 }
+#ps-error-msg{
+    display: none;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
+    padding: 10px;
+    color: #ff0000;
+    font-weight: bold;
+}

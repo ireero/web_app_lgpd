@@ -78,6 +78,7 @@ def login(request):
 
 def cadastro(request):
     human = 3
+    password_token = 3
 
     if request.POST:
         form = CadastroForm(request.POST)
@@ -87,6 +88,9 @@ def cadastro(request):
                 cliente = form.save()
                 form = CadastroForm()
                 human = 1
+                password_token = 1
+            else:
+                password_token = 0
         else:
             human = 0
     else:
@@ -94,7 +98,8 @@ def cadastro(request):
 
     context = {
     'form': form,
-    'human': human
+    'human': human,
+    'ps_token' : password_token
     }
 
     return render(request, 'quiz/cadastro.html', context)

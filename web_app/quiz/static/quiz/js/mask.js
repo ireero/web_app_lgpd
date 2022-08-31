@@ -33,3 +33,14 @@ let divResult = document.getElementById('form_msg');
         const textError = 'Captcha Inválido';
         divResult.innerHTML = textError;
     }
+
+
+//Confirmar senha error
+const error_result = document.getElementById('ps-error-msg').innerHTML;
+let divError = document.getElementById('ps-error-msg');
+
+    if(result === '0'){
+        divResult.style.display = 'flex' ;
+        const textError = 'Confirmar senha inválido';
+        divResult.innerHTML = textError;
+    }
