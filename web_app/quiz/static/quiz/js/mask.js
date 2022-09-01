@@ -44,3 +44,9 @@ let divError = document.getElementById('ps-error-msg');
         const textError = 'Confirmar senha inválido';
         divResult.innerHTML = textError;
     }
+
+
+//Confirmar senha
+const formElement = document.getElementsByClassName("form")[0]; // div principal
+const list = formElement.getElementsByTagName("p");
+formElement.insertBefore( list[(list.length - 2)],list[6] );
