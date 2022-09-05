@@ -5,6 +5,11 @@ from captcha.fields import CaptchaField
 
 
 class CadastroForm(forms.ModelForm):
+    '''
+        -> Modelo de formulário que vai ser utilizado para os dados que vão preencher os campos relacionados
+        ao model Cadastro.
+        
+    '''
     confirmar_senha = forms.CharField(widget=forms.PasswordInput())
     captcha = CaptchaField()
     
