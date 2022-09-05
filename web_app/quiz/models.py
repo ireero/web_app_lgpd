@@ -1,10 +1,12 @@
 from audioop import mul
 from pyexpat import model
+from queue import PriorityQueue
 from tkinter import CASCADE
+from typing import OrderedDict
 from django.db import models
 
 
-# Classe que será utilizada como objeto de configuração no banco de dados
+# Classe que será utilizada como objeto de configuração no banco de dados para o usuário
 class Cadastro(models.Model):
 
     # Metodo para ao vizualisar o banco de dados seja mostrado cada dado com o atributo nome
@@ -19,7 +21,7 @@ class Cadastro(models.Model):
     senha = models.CharField(max_length=30, blank=False, null=False)
     termo_de_uso = models.BooleanField('Eu aceito os termos de uso', default=False)
 
-
+# Classe que será utilizada como objeto de configuração no banco de dados para as Peruntas do Quiz
 class Pergunta(models.Model):
 
     def __str__(self) -> str:
@@ -28,7 +30,7 @@ class Pergunta(models.Model):
     pergunta = models.CharField(max_length=300, unique=True)
     pesos = models.IntegerField(default=False, null=False)
     
-
+# Classe que será utilizada como objeto de configuração no banco de dados para as Opções de respostas no Quiz
 class OpcaoResposta(models.Model):
 
     def __str__(self) -> str:
@@ -36,7 +38,7 @@ class OpcaoResposta(models.Model):
 
     respostas = models.CharField(max_length=200, unique=True)
 
-
+# Classe que será utilizada como objeto de configuração no banco de dados para cada Questão que o usuário responder
 class Questao(models.Model):
 
     def __str__(self) -> str:

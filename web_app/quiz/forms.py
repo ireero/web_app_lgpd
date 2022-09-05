@@ -5,14 +5,19 @@ from captcha.fields import CaptchaField
 
 
 class CadastroForm(forms.ModelForm):
+    '''
+        -> Modelo de formulário que vai ser utilizado para os dados que vão preencher os campos relacionados
+        ao model Cadastro.
+        
+    '''
     confirmar_senha = forms.CharField(widget=forms.PasswordInput())
     captcha = CaptchaField()
     
     class Meta:
         model = Cadastro
         fields = '__all__'
-    
-
+        
+        
     def __init__(self, *args, **kwargs):
         super(CadastroForm, self).__init__(*args, **kwargs)
         self.fields['nome_empresa'].widget.attrs.update({'class': 'input'})

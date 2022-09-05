@@ -15,7 +15,6 @@
         <form class="form" id="createAccount" action="{% url 'cadastro' %}" method="POST">
           {% csrf_token %}
             {{ form.as_p }}
-
             <button class="form__button" type="submit">Cadastrar</button>
         </form>
         <div id="form_msg">{{ human }}</div>
