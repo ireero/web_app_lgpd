@@ -78,6 +78,7 @@ def login(request):
         if log.verificarLogin(email, senha) != 0:
             context = {
                 'id_usuario': log.verificarLogin(email, senha),
+                'perguntas': perguntas,
                 'fail' : fail
             }
             # Se sim o usuário é redirecionado para a página do quiz

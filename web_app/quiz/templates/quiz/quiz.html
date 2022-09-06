@@ -35,6 +35,7 @@
             <div class="step rounded-pill d-inline-block text-center position-relative">7</div>
             <div class="step rounded-pill d-inline-block text-center position-relative">8</div>
             <div class="step rounded-pill d-inline-block text-center position-relative">9</div>
+            <div class="step rounded-pill d-inline-block text-center position-relative">10</div>
 
          </div>
          <form class="multisteps_form position-relative" id="wizard" method="POST" action="{% url 'quiz' id_usuario %}">
@@ -45,7 +46,7 @@
                      <div class="row">
                         <div class="col-lg-4">
                            <div class="form_title ps-5">
-                              <h1 class="text-white">A Sua empresa avaliou os processos internos para descobrir se estão em conformidade com a LGPD?</h1>
+                              <h1 class="text-white">{{ perguntas.0 }}</h1>
                            </div>
                         </div>
                         <div class="col-lg-4 text-center">
@@ -96,7 +97,7 @@
                      <div class="row">
                         <div class="col-lg-4">
                            <div class="form_title ps-5">
-                              <h1 class="text-white">Foi indicado um responsável, Encarregado de proteção de dados?</h1>
+                              <h1 class="text-white">{{ perguntas.1 }}</h1>
                            </div>
                         </div>
                         <div class="col-lg-4 text-center">
@@ -148,7 +149,7 @@
                      <div class="row">
                         <div class="col-lg-4">
                            <div class="form_title ps-5">
-                              <h1 class="text-white">Existe procedimento de informação aos titulares caso haja vazamento dos dados?</h1>
+                              <h1 class="text-white">{{ perguntas.2 }}</h1>
                            </div>
                         </div>
                         <div class="col-lg-4 text-center">
@@ -200,7 +201,7 @@
                      <div class="row">
                         <div class="col-lg-4">
                            <div class="form_title ps-5">
-                              <h1 class="text-white">Os dados são eliminados de forma correta ao fim do tratamento?</h1>
+                              <h1 class="text-white">{{ perguntas.3 }}</h1>
                            </div>
                         </div>
                         <div class="col-lg-4 text-center">
@@ -252,7 +253,7 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">O local que processa as informações é restrito somente ao pessoal autorizado?</h1>
+                           <h1 class="text-white">{{ perguntas.4 }}</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -304,7 +305,7 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">Há um processo de análise e monitoramento de vulnerabilidades?</h1>
+                           <h1 class="text-white">{{ perguntas.5 }}</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -356,8 +357,7 @@
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">O órgão já realizou um planejamento do seu Programa
-Institucional de Privacidade de Dados?</h1>
+                           <h1 class="text-white">{{ perguntas.6 }}</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -409,7 +409,7 @@ Institucional de Privacidade de Dados?</h1>
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">Existe uma frequência estabelecida para geração dos backups?</h1>
+                           <h1 class="text-white">{{ perguntas.7 }}</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -461,7 +461,7 @@ Institucional de Privacidade de Dados?</h1>
                   <div class="row">
                      <div class="col-lg-4">
                         <div class="form_title ps-5">
-                           <h1 class="text-white">Todos os dados pessoais são obtidos o devido consentimento do titular?</h1>
+                           <h1 class="text-white">{{ perguntas.8 }}</h1>
                         </div>
                      </div>
                      <div class="col-lg-4 text-center">
@@ -497,6 +497,630 @@ Institucional de Privacidade de Dados?</h1>
                                  </label>
                               </li>
                            </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <!---------- Form Button ---------->
+               <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                  <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                  <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+               </div>
+               </div>
+               <!------------------------ Step-10 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.9 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_37" class="step_10 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_10_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_38" class="step_10 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_10_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_39" class="step_10 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_10_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_40" class="step_10 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_10_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                  <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                     <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                     <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  </div>
+               </div>
+               <!------------------------ Step-11 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.10 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_41" class="step_11 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_11_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_42" class="step_11 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_11_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_43" class="step_11 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_11_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_44" class="step_11 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_11_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                  <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                     <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                     <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                  </div>
+               </div>
+               <!------------------------ Step-12 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.11 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_45" class="step_12 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_12_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_46" class="step_12 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_12_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_47" class="step_12 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_12_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_48" class="step_12 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_12_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                     <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                        <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                        <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                     </div>
+               </div>
+               <!------------------------ Step-13 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.12 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_49" class="step_13 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_13_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_50" class="step_13 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_13_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_51" class="step_13 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_13_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_52" class="step_13 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_13_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                     <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                        <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                        <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                     </div>
+               </div>
+               <!------------------------ Step-14 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.13 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_53" class="step_14 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_14_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_54" class="step_14 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_14_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_55" class="step_14 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_14_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_56" class="step_14 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_14_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                     <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                        <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                        <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                     </div>
+               </div>
+               <!------------------------ Step-15 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.14 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_57" class="step_15 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_15_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_58" class="step_15 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_15_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_59" class="step_15 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_15_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_60" class="step_15 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_15_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                     <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                        <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                        <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                     </div>
+               </div>
+               <!------------------------ Step-16 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.15 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_61" class="step_16 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_16_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_62" class="step_16 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_16_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_63" class="step_16 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_16_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_64" class="step_16 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_16_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                     <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                        <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                        <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                     </div>
+               </div>
+               <!------------------------ Step-17 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.16 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_65" class="step_17 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_17_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_66" class="step_17 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_17_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_67" class="step_17 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_17_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_68" class="step_17 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_17_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                     <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                        <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                        <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                     </div>
+               </div>
+               <!------------------------ Step-18 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.17 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_69" class="step_18 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_18_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_70" class="step_18 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_18_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_71" class="step_18 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_18_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_72" class="step_18 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_18_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                     <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                        <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                        <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                     </div>
+               </div>
+               <!------------------------ Step-19 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.18 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_73" class="step_19 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_19_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_74" class="step_19 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_19_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_75" class="step_19 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_19_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_76" class="step_19 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_19_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                     <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                        <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                        <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                     </div>
+               </div>
+               <!------------------------ Step-20 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.19 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_77" class="step_20 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_20_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_78" class="step_20 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_20_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_79" class="step_20 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_20_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_80" class="step_20 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_20_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                     <!---------- Form Button ---------->
+                     <div class="form_btn py-5 d-flex justify-content-center align-items-center">
+                        <button type="button" class="js-btn-prev f_btn rounded-pill disable text-uppercase" id="prevBtn"><span><i class="fas fa-arrow-left pe-1"></i></span> Voltar </button>
+                        <button type="button" class="js-btn-next f_btn rounded-pill active text-uppercase" id="nextBtn"> Próxima Questão <span><i class="fas fa-arrow-right ps-1"></i></span></button>
+                     </div>
+               </div>
+               <!------------------------ Step-21 ---------------------------->
+               <div class="multisteps_form_panel active" data-animation="slideVert">
+                  <div class="form_content">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="form_title ps-5">
+                              <h1 class="text-white">{{ perguntas.20 }}</h1>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                           <div class="form_img">
+                              <img src="{% static 'quiz/images/bg_1.png' %}" alt="image_not_found">
+                           </div>
+                        </div>
+                        <div class="col-lg-4 text-end">
+                           <div class="form_items radio-list">
+                              <ul class="text-uppercase list-unstyled">
+                                 <li>
+                                    <label for="opt_81" class="step_21 rounded-pill animate__animated animate__fadeInRight animate_25ms active">
+                                       <input type="radio" id="opt_1" name="stp_21_valor_selecao" value="0">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, mas estamos planejando essa avaliação.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_82" class="step_21 rounded-pill  animate__animated animate__fadeInRight animate_50ms">
+                                       <input type="radio" id="opt_2" name="stp_21_valor_selecao" value="1">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, avaliamos os processos, mas ainda não corrigimos os problemas encontrados.</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_83" class="step_21 rounded-pill animate__animated animate__fadeInRight animate_100ms">
+                                       <input type="radio" id="opt_3" name="stp_21_valor_selecao" value="2">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Sim, e já começamos a tomar providência e adequálas a LGPD</span>
+                                    </label>
+                                 </li>
+                                 <li>
+                                    <label for="opt_84" class="step_21 animate__animated animate__fadeInRight animate_150ms">
+                                       <input type="radio" id="opt_4" name="stp_21_valor_selecao" value="3">
+                                       <span class="label-content d-inline-block text-center rounded-pill">Não, não é necessário.</span>
+                                    </label>
+                                 </li>
+                              </ul>
+                           </div>
                         </div>
                      </div>
                   </div>
